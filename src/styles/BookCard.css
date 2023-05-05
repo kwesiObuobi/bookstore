@@ -1,0 +1,98 @@
+.book-card {
+  border: 1px solid red;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: var(--container-lg);
+  margin: 0 auto;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.genre {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #121212;
+  opacity: 0.5;
+}
+
+.book-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.book-author {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #4386bf;
+}
+
+.book-buttons {
+  margin-top: 1.1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.book-btn {
+  border: none;
+  background: none;
+  outline: none;
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #4386bf;
+  padding-right: 1rem;
+  border-right: solid 1px #e8e8e8;
+}
+
+.book-btn:last-child {
+  border: none;
+}
+
+.percentage {
+  font-size: 2rem;
+  color: #121212;
+}
+
+.completed-text {
+  color: #121212;
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+.chapter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.chapter-box p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #121212;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.chapter {
+  color: #121212;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.update-progress-btn {
+  letter-spacing: 0.5px;
+  width: 80%;
+  padding: 0.4rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  background-color: #0290ff;
+  color: white;
+  border: solid 1px transparent;
+}
