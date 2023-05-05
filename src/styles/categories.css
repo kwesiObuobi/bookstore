@@ -1,0 +1,4 @@
+.categories-container {
+  width: var(--container-lg);
+  margin: 0 auto;
+}
