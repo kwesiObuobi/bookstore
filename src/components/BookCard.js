@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const BookCard = () => {
-  const sam = 'hey';
+  const [completed, setCompleted] = useState('0');
+
+  useEffect(() => {
+    setCompleted('80%');
+  }, []);
+
   return (
     <div className="book-card">
-      {sam}
       <div className="book-details">
         <div className="genre">Action</div>
         <div className="book-title">The Hunger Games</div>
@@ -16,7 +20,7 @@ const BookCard = () => {
         </div>
 
         <div className="progress-box">
-          <div className="percentage">80%</div>
+          <div className="percentage">{completed}</div>
           <div className="completed-text">Completed</div>
         </div>
 

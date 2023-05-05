@@ -6,7 +6,6 @@
 }
 
 .navbar {
-  border: 1px solid red;
   width: var(--container-lg);
   display: flex;
   justify-content: space-between;
