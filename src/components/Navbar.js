@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaUser } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
-import '../styles/Navbar.css';
+import '../styles/navbar.css';
 
 const Navbar = () => (
   <div className="navbar-container">

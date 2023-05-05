@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/BookCard.css';
+import '../styles/bookCard.css';
 
 const BookCard = () => {
   const [completed, setCompleted] = useState('0');
