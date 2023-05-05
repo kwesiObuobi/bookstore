@@ -7,3 +7,13 @@
   font-family: 'Montserrat', sans-serif;
   list-style: none;
 }
+
+:root {
+  --container-lg: 70%;
+  --container-md: 90%;
+  --container-sm: 95%;
+}
+
+.tests {
+  color: blue;
+}

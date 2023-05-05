@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaUser } from 'react-icons/fa';
 
 const Navbar = () => (
   <div className="navbar-container">
@@ -10,7 +11,7 @@ const Navbar = () => (
           <li className="nav-link">Categories</li>
         </ul>
       </div>
-      <div className="user">user</div>
+      <div className="user"><FaUser /></div>
     </nav>
   </div>
 );
