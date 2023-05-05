@@ -4,6 +4,7 @@ import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import BookList from './components/BookList';
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div>This is books -index- route</div>,
+        element: <BookList />,
       },
       {
         path: 'categories',
