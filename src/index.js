@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import BookList from './components/BookList';
+import CategoriesPage from './components/CategoriesPage';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'categories',
-        element: <div>Categories</div>,
+        element: <CategoriesPage />,
       },
     ],
   },
