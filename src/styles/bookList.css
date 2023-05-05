@@ -1,3 +1,5 @@
 .book-list {
-  border: solid 1px blue;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }

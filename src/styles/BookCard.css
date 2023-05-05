@@ -1,11 +1,11 @@
 .book-card {
-  border: 1px solid red;
-  padding: 1rem;
+  padding: 2rem 7.438rem 1.625rem 1.688rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: var(--container-lg);
   margin: 0 auto;
+  border: solid 1px #e8e8e8;
 }
 
 .book-details {
