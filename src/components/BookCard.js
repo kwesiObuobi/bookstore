@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/bookCard.css';
 
-const BookCard = () => {
+const BookCard = ({ title, author, category }) => {
   const [completed, setCompleted] = useState('0');
 
   useEffect(() => {
