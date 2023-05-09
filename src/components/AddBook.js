@@ -23,6 +23,7 @@ const AddBook = () => {
       setTitle('');
       setAuthor('');
       setError('');
+      document.querySelector('form').reset();
     } else {
       setError('Book title and Author must be specified');
     }
