@@ -29,15 +29,15 @@ export const bookSlice = createSlice({
   reducers: {
     addBook: (state, action) => {
       state.books.push({
-        item_id: action.id,
-        title: action.title,
-        author: action.author,
-        category: action.category,
+        item_id: action.payload.id,
+        title: action.payload.title,
+        author: action.payload.author,
+        category: action.payload.category,
       });
     },
     removeBook: (state, action) => {
       state.books = state.books
-        .filter((book) => book.id !== action.payload);
+        .filter((book) => book.item_id !== action.payload);
     },
   },
 });

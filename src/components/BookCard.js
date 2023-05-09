@@ -5,7 +5,7 @@ import { removeBook } from '../redux/features/book/bookSlice';
 import '../styles/bookCard.css';
 
 const BookCard = ({
-  id, title, author, category,
+  item, title, author, category,
 }) => {
   const [completed, setCompleted] = useState('0');
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const BookCard = ({
           <button
             type="button"
             className="book-btn"
-            onClick={() => handleDelete(id)}
+            onClick={() => handleDelete(item)}
           >
             Remove
           </button>
@@ -52,7 +52,7 @@ const BookCard = ({
 };
 
 BookCard.propTypes = {
-  id: PropTypes.string.isRequired,
+  item: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
