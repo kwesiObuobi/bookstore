@@ -49,6 +49,7 @@ const AddBook = () => {
           onChange={(e) => setAuthor(e.target.value)}
           required
         >
+          <option>- Select Author -</option>
           <option value="Author 1">Author 1</option>
           <option value="Author 2">Author 2</option>
           <option value="Author 3">Author 3</option>
