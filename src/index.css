@@ -17,3 +17,9 @@
 .tests {
   color: blue;
 }
+
+@media screen and (min-width: 768px) {
+  button:hover {
+    cursor: pointer;
+  }
+}

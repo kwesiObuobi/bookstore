@@ -1,22 +1,38 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { removeBook } from '../redux/features/book/bookSlice';
 import '../styles/bookCard.css';
 
-const BookCard = () => {
+const BookCard = ({
+  item, title, author, category,
+}) => {
   const [completed, setCompleted] = useState('0');
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setCompleted('80%');
   }, []);
 
+  const handleDelete = (id) => {
+    dispatch(removeBook(id));
+  };
+
   return (
     <div className="book-card">
       <div className="book-details">
-        <div className="genre">Action</div>
-        <div className="book-title">The Hunger Games</div>
-        <div className="book-author">Suzzane Collins</div>
+        <div className="genre">{ category }</div>
+        <div className="book-title">{ title }</div>
+        <div className="book-author">{ author }</div>
         <div className="book-buttons">
           <button type="button" className="book-btn">Comments</button>
-          <button type="button" className="book-btn">Remove</button>
+          <button
+            type="button"
+            className="book-btn"
+            onClick={() => handleDelete(item)}
+          >
+            Remove
+          </button>
           <button type="button" className="book-btn">Edit</button>
         </div>
       </div>
@@ -33,6 +49,13 @@ const BookCard = () => {
       </div>
     </div>
   );
+};
+
+BookCard.propTypes = {
+  item: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default BookCard;

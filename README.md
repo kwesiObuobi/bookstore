@@ -12,6 +12,8 @@
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -67,6 +69,20 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 ```
 git clone https://github.com/kwesiObuobi/bookstore.git
+```
+
+### Install
+
+Install this project with:
+```
+npm install
+```
+
+### Usage
+
+To run the project, execute the following command:
+```
+npm run start
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

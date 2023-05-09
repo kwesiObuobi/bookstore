@@ -1,15 +1,29 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import BookCard from './BookCard';
 import '../styles/bookList.css';
 import AddBook from './AddBook';
 
-const BookList = () => (
-  <div className="book-list">
-    <BookCard />
-    <BookCard />
-    <BookCard />
-    <AddBook />
-  </div>
-);
+const BookList = () => {
+  const { books } = useSelector((store) => store.book);
+
+  return (
+    <div className="book-list">
+      {
+        books.map((book) => (
+          <BookCard
+            key={book.item_id}
+            item={book.item_id}
+            title={book.title}
+            author={book.author}
+            category={book.category}
+          />
+        ))
+      }
+
+      <AddBook />
+    </div>
+  );
+};
 
 export default BookList;
