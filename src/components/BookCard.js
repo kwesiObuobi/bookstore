@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/bookCard.css';
 
 const BookCard = ({ title, author, category }) => {
@@ -11,9 +12,9 @@ const BookCard = ({ title, author, category }) => {
   return (
     <div className="book-card">
       <div className="book-details">
-        <div className="genre">Action</div>
-        <div className="book-title">The Hunger Games</div>
-        <div className="book-author">Suzzane Collins</div>
+        <div className="genre">{ category }</div>
+        <div className="book-title">{ title }</div>
+        <div className="book-author">{ author }</div>
         <div className="book-buttons">
           <button type="button" className="book-btn">Comments</button>
           <button type="button" className="book-btn">Remove</button>
@@ -34,5 +35,11 @@ const BookCard = ({ title, author, category }) => {
     </div>
   );
 };
+
+BookCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+}
 
 export default BookCard;
