@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { removeBook } from '../redux/features/book/bookSlice';
 import '../styles/bookCard.css';
 
-const BookCard = ({ title, author, category }) => {
+const BookCard = ({
+  id, title, author, category,
+}) => {
   const [completed, setCompleted] = useState('0');
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setCompleted('80%');
   }, []);
+
+  const handleDelete = (id) => {
+    dispatch(removeBook(id));
+  };
 
   return (
     <div className="book-card">
@@ -17,7 +26,13 @@ const BookCard = ({ title, author, category }) => {
         <div className="book-author">{ author }</div>
         <div className="book-buttons">
           <button type="button" className="book-btn">Comments</button>
-          <button type="button" className="book-btn">Remove</button>
+          <button
+            type="button"
+            className="book-btn"
+            onClick={() => handleDelete(id)}
+          >
+            Remove
+          </button>
           <button type="button" className="book-btn">Edit</button>
         </div>
       </div>
@@ -37,6 +52,7 @@ const BookCard = ({ title, author, category }) => {
 };
 
 BookCard.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,

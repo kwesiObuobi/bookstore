@@ -13,6 +13,7 @@ const BookList = () => {
         books.map((book) => (
           <BookCard
             key={book.item_id}
+            id={book.item_id}
             title={book.title}
             author={book.author}
             category={book.category}
@@ -20,9 +21,6 @@ const BookList = () => {
         ))
       }
 
-      {/* <BookCard />
-      <BookCard />
-      <BookCard /> */}
       <AddBook />
     </div>
   );
