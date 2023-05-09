@@ -40,6 +40,6 @@ BookCard.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-}
+};
 
 export default BookCard;
