@@ -28,7 +28,7 @@ const initialState = {
 export const fetchBooks = createAsyncThunk('book/getBooks', async () => {
   try {
     const response = await axios.get(baseUrl);
-    return response;
+    return response.data;
   } catch (err) {
     return err.message;
   }
