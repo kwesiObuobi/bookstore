@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/features/book/bookSlice';
+import { postBook } from '../redux/features/book/bookSlice';
 import '../styles/addBook.css';
 
 const AddBook = () => {
@@ -14,7 +14,7 @@ const AddBook = () => {
     e.preventDefault();
 
     if (title && author) {
-      dispatch(addBook({
+      dispatch(postBook({
         item_id: uuidv4(),
         title,
         author,
@@ -44,17 +44,13 @@ const AddBook = () => {
           onChange={(e) => setTitle(e.target.value)}
           required
         />
-        <select
-          name="new-author"
-          id="new-author"
+        <input
+          type="text"
+          placeholder="Book Author"
+          value={author}
           onChange={(e) => setAuthor(e.target.value)}
           required
-        >
-          <option>- Select Author -</option>
-          <option value="Author 1">Author 1</option>
-          <option value="Author 2">Author 2</option>
-          <option value="Author 3">Author 3</option>
-        </select>
+        />
         <button
           type="submit"
           onClick={(e) => handleBookAdd(e)}
