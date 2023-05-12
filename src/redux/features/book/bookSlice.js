@@ -1,4 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { baseUrl } from '../../../config/api';
 
 const initialState = {
   books: [
@@ -22,6 +24,15 @@ const initialState = {
     },
   ],
 };
+
+export const fetchBooks = createAsyncThunk('book/getBooks', async () => {
+  try {
+    const response = await axios.get(baseUrl);
+    return response;
+  } catch (err) {
+    return err.message;
+  }
+});
 
 export const bookSlice = createSlice({
   name: 'book',
