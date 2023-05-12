@@ -34,6 +34,24 @@ export const fetchBooks = createAsyncThunk('book/getBooks', async () => {
   }
 });
 
+export const postBook = createAsyncThunk('book/postBook', async (payload) => {
+  try {
+    const response = await axios.post(baseUrl, payload);
+    return response.data;
+  } catch (err) {
+    return err.message;
+  }
+});
+
+export const deleteBook = createAsyncThunk('book/deleteBook', async () => {
+  try {
+    const response = await axios.get(baseUrl);
+    return response.data;
+  } catch (err) {
+    return err.message;
+  }
+});
+
 export const bookSlice = createSlice({
   name: 'book',
   initialState,
