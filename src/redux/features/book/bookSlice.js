@@ -21,7 +21,7 @@ export const fetchBooks = createAsyncThunk('book/getBooks', async () => {
 export const postBook = createAsyncThunk('book/postBook', async (payload) => {
   try {
     const response = await axios.post(URL, payload);
-    return response.data;
+    return [response.data, payload];
   } catch (err) {
     return err.message;
   }
@@ -39,20 +39,6 @@ export const deleteBook = createAsyncThunk('book/deleteBook', async (payload) =>
 export const bookSlice = createSlice({
   name: 'book',
   initialState,
-  // reducers: {
-  //   addBook: (state, action) => {
-  //     state.books.push({
-  //       item_id: action.payload.id,
-  //       title: action.payload.title,
-  //       author: action.payload.author,
-  //       category: action.payload.category,
-  //     });
-  //   },
-  //   removeBook: (state, action) => {
-  //     state.books = state.books
-  //       .filter((book) => book.item_id !== action.payload);
-  //   },
-  // },
   extraReducers: (builder) => {
     builder.addCase(fetchBooks.pending, (state) => {
       state.isLoading = true;
@@ -74,7 +60,7 @@ export const bookSlice = createSlice({
     // Adding a book
     builder.addCase(postBook.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.books.push(action.payload);
+      state.books.push(action.payload[1]);
     });
 
     builder.addCase(postBook.rejected, (state, action) => {
@@ -85,7 +71,6 @@ export const bookSlice = createSlice({
     // Deleting a book
     builder.addCase(deleteBook.fulfilled, (state, action) => {
       state.isLoading = false;
-      console.log(action.payload);
       state.books = state.books.filter(
         (book) => book.item_id !== action.payload[1],
       );
