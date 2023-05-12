@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook } from '../redux/features/book/bookSlice';
+import { deleteBook } from '../redux/features/book/bookSlice';
 import '../styles/bookCard.css';
 
 const BookCard = ({
@@ -15,7 +15,7 @@ const BookCard = ({
   }, []);
 
   const handleDelete = (id) => {
-    dispatch(removeBook(id));
+    dispatch(deleteBook(id));
   };
 
   return (

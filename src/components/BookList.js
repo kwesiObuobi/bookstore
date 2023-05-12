@@ -11,6 +11,9 @@ const BookList = () => {
 
   useEffect(() => {
     dispatch(fetchBooks());
+    console.log('from booklist');
+    console.log('here');
+    console.log(books);
   }, [dispatch]);
 
   return (

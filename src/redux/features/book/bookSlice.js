@@ -4,26 +4,6 @@ import axios from 'axios';
 const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/bJc3DxMoedsueOCCDqQv/books';
 
 const initialState = {
-  // books: [
-  //   {
-  //     item_id: 'item1',
-  //     title: 'The Great Gatsby',
-  //     author: 'John Smith',
-  //     category: 'Fiction',
-  //   },
-  //   {
-  //     item_id: 'item2',
-  //     title: 'Anna Karenina',
-  //     author: 'Leo Tolstoy',
-  //     category: 'Fiction',
-  //   },
-  //   {
-  //     item_id: 'item3',
-  //     title: 'The Selfish Gene',
-  //     author: 'Richard Dawkins',
-  //     category: 'Nonfiction',
-  //   },
-  // ],
   books: [],
   isLoading: false,
   error: undefined,
@@ -49,8 +29,8 @@ export const postBook = createAsyncThunk('book/postBook', async (payload) => {
 
 export const deleteBook = createAsyncThunk('book/deleteBook', async (payload) => {
   try {
-    const response = await axios.get(`${URL}/${payload}`);
-    return response.data;
+    const response = await axios.delete(`${URL}/${payload}`);
+    return [response.data, payload];
   } catch (err) {
     return err.message;
   }
@@ -59,20 +39,20 @@ export const deleteBook = createAsyncThunk('book/deleteBook', async (payload) =>
 export const bookSlice = createSlice({
   name: 'book',
   initialState,
-  reducers: {
-    addBook: (state, action) => {
-      state.books.push({
-        item_id: action.payload.id,
-        title: action.payload.title,
-        author: action.payload.author,
-        category: action.payload.category,
-      });
-    },
-    removeBook: (state, action) => {
-      state.books = state.books
-        .filter((book) => book.item_id !== action.payload);
-    },
-  },
+  // reducers: {
+  //   addBook: (state, action) => {
+  //     state.books.push({
+  //       item_id: action.payload.id,
+  //       title: action.payload.title,
+  //       author: action.payload.author,
+  //       category: action.payload.category,
+  //     });
+  //   },
+  //   removeBook: (state, action) => {
+  //     state.books = state.books
+  //       .filter((book) => book.item_id !== action.payload);
+  //   },
+  // },
   extraReducers: (builder) => {
     builder.addCase(fetchBooks.pending, (state) => {
       state.isLoading = true;
@@ -103,10 +83,11 @@ export const bookSlice = createSlice({
     });
 
     // Deleting a book
-    builder.addCase(deleteBook.fulfilled, (state, { payload }) => {
+    builder.addCase(deleteBook.fulfilled, (state, action) => {
       state.isLoading = false;
+      console.log(action.payload);
       state.books = state.books.filter(
-        (book) => book.item_id !== payload.bookId,
+        (book) => book.item_id !== action.payload[1],
       );
     });
 

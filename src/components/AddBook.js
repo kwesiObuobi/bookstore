@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/features/book/bookSlice';
+import { postBook } from '../redux/features/book/bookSlice';
 import '../styles/addBook.css';
 
 const AddBook = () => {
@@ -14,7 +14,7 @@ const AddBook = () => {
     e.preventDefault();
 
     if (title && author) {
-      dispatch(addBook({
+      dispatch(postBook({
         item_id: uuidv4(),
         title,
         author,
