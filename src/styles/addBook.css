@@ -35,3 +35,10 @@
   margin-left: 1.5rem;
   text-transform: capitalize;
 }
+
+@media screen and (max-width: 600px) {
+  .add-book-container form {
+    display: flex;
+    flex-direction: column;
+  }
+}

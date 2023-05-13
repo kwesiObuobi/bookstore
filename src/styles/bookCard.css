@@ -100,6 +100,9 @@
 @media screen and (max-width: 900px) {
   .book-card {
     flex-direction: column;
+    width: var(--container-sm);
+    justify-content: center;
+    padding: 2rem;
   }
 
   .book-details {
