@@ -1,6 +1,7 @@
 .add-book-container {
   width: var(--container-lg);
   margin: 2rem auto 1rem;
+  border: solid 1px red;
 }
 
 .add-book-header {
@@ -14,10 +15,11 @@
   display: flex;
   width: 100%;
   gap: 1rem;
+  border: solid 3px blue;
 }
 
 .add-book-input {
-  padding: 0.813rem 35.688rem 0.813rem 1.063rem;
+  flex: 3;
 }
 
 #new-author {

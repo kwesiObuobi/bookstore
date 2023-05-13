@@ -96,3 +96,18 @@
   color: white;
   border: solid 1px transparent;
 }
+
+@media screen and (max-width: 900px) {
+  .book-card {
+    flex-direction: column;
+  }
+
+  .book-details {
+    margin-bottom: 1rem;
+  }
+
+  .progress-box {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+}
