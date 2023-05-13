@@ -8,6 +8,16 @@
   border: solid 1px #e8e8e8;
 }
 
+.circle-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.completed {
+  margin-left: 10px;
+}
+
 .book-details {
   display: flex;
   flex-direction: column;
@@ -95,4 +105,22 @@
   background-color: #0290ff;
   color: white;
   border: solid 1px transparent;
+}
+
+@media screen and (max-width: 900px) {
+  .book-card {
+    flex-direction: column;
+    width: var(--container-sm);
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .book-details {
+    margin-bottom: 1rem;
+  }
+
+  .progress-box {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
 }

@@ -31,6 +31,7 @@ const AddBook = () => {
 
   return (
     <div className="add-book-container">
+      <hr />
       <h1 className="add-book-header">
         Add new book
         <span className="input-error">{error}</span>
@@ -54,6 +55,7 @@ const AddBook = () => {
         <button
           type="submit"
           onClick={(e) => handleBookAdd(e)}
+          className="add-new-book"
         >
           ADD BOOK
         </button>

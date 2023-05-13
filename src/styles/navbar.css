@@ -40,3 +40,13 @@
   color: black;
   font-weight: 500;
 }
+
+@media screen and (max-width: 700px) {
+  .logo-and-links {
+    flex-direction: column;
+  }
+
+  .navbar {
+    align-items: flex-start;
+  }
+}

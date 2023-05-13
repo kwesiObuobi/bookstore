@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { deleteBook } from '../redux/features/book/bookSlice';
 import '../styles/bookCard.css';
 
 const BookCard = ({
   item, title, author, category,
 }) => {
-  const [completed, setCompleted] = useState('0');
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    setCompleted('80%');
-  }, []);
 
   const handleDelete = (id) => {
     dispatch(deleteBook(id));
   };
+
+  const percentage = 85;
 
   return (
     <div className="book-card">
@@ -37,9 +34,20 @@ const BookCard = ({
         </div>
       </div>
 
-      <div className="progress-box">
-        <div className="percentage">{completed}</div>
-        <div className="completed-text">Completed</div>
+      <div
+        style={{ width: '10rem', height: '4.25rem' }}
+        className="circle-flex"
+      >
+        <CircularProgressbar
+          value={percentage}
+          styles={buildStyles({ pathColor: '#0EA5E9', marginRight: '10px' })}
+        />
+        <div className="completed">
+          <p className="ml-5 text-sm">
+            <span className="font-semibold">{percentage}</span>
+            % Completed
+          </p>
+        </div>
       </div>
 
       <div className="chapter-box">
