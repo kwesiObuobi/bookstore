@@ -32,7 +32,7 @@ hr {
 .add-book-container form > * {
   padding: 0.5rem;
   border: solid 1px #e8e8e8;
-  border-radius: 4px
+  border-radius: 4px;
 }
 
 .add-book-input {
