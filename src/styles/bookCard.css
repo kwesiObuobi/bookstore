@@ -8,6 +8,16 @@
   border: solid 1px #e8e8e8;
 }
 
+.circle-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.completed {
+  margin-left: 10px;
+}
+
 .book-details {
   display: flex;
   flex-direction: column;
